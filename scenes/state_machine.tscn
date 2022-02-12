@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cov7sekq3ypfj"]
+
+[ext_resource type="Script" path="res://scripts/state_machine.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruee7"]
+bg_color = Color(0.133333, 0.14902, 0.180392, 1)
+
+[node name="state_machine" type="Node2D"]
+process_mode = 3
+z_index = 3
+script = ExtResource( "1" )
+
+[node name="node_2d" type="Node2D" parent="."]
+z_index = -1
+
+[node name="center_container" type="CenterContainer" parent="node_2d"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel" type="Panel" parent="node_2d/center_container"]
+show_behind_parent = true
+theme_override_styles/panel = SubResource( "StyleBoxFlat_ruee7" )

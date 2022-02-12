@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://okhclj4vi73y"]
+
+[sub_resource type="CircleShape2D" id="1"]
+
+[node name="ledge" type="Area2D"]
+z_index = 1
+collision_layer = 64
+collision_mask = 0
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+z_index = -1
+shape = SubResource( "1" )

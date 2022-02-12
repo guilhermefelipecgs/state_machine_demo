@@ -1,0 +1,148 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxdwors5nhrbh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v68v8"]
+bg_color = Color(0.101961, 0.109804, 0.137255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.101961, 0.109804, 0.137255, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt36q"]
+bg_color = Color(0.101961, 0.109804, 0.137255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.65, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sljh"]
+bg_color = Color(0.101961, 0.109804, 0.137255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.501961, 0.964706, 0.811765, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq84v"]
+bg_color = Color(0.101961, 0.109804, 0.137255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.94902, 0.4, 0.380392, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="node_2d" type="Node2D"]
+z_index = 1
+
+[node name="normal" type="PanelContainer" parent="."]
+visible = false
+offset_right = 73.0
+offset_bottom = 39.0
+theme_override_styles/panel = SubResource( "StyleBoxFlat_v68v8" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin_container" type="MarginContainer" parent="normal"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 74.0
+offset_bottom = 40.0
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_bottom = 8
+
+[node name="label" type="Label" parent="normal/margin_container"]
+offset_left = 36.0
+offset_top = 8.0
+offset_right = 37.0
+offset_bottom = 31.0
+
+[node name="current" type="PanelContainer" parent="."]
+visible = false
+theme_override_styles/panel = SubResource( "StyleBoxFlat_pt36q" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin_container" type="MarginContainer" parent="current"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 74.0
+offset_bottom = 40.0
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_bottom = 8
+
+[node name="label" type="Label" parent="current/margin_container"]
+offset_left = 36.0
+offset_top = 8.0
+offset_right = 37.0
+offset_bottom = 31.0
+
+[node name="start" type="PanelContainer" parent="."]
+visible = false
+offset_right = 75.0
+offset_bottom = 41.0
+theme_override_styles/panel = SubResource( "StyleBoxFlat_7sljh" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin_container" type="MarginContainer" parent="start"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 74.0
+offset_bottom = 40.0
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_bottom = 8
+
+[node name="label" type="Label" parent="start/margin_container"]
+offset_left = 36.0
+offset_top = 8.0
+offset_right = 37.0
+offset_bottom = 31.0
+
+[node name="end" type="PanelContainer" parent="."]
+visible = false
+theme_override_styles/panel = SubResource( "StyleBoxFlat_dq84v" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin_container" type="MarginContainer" parent="end"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 74.0
+offset_bottom = 40.0
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_bottom = 8
+
+[node name="label" type="Label" parent="end/margin_container"]
+offset_left = 36.0
+offset_top = 8.0
+offset_right = 37.0
+offset_bottom = 31.0
