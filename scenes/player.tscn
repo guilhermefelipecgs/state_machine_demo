@@ -3054,7 +3054,7 @@ graph_offset = Vector2(129, 3)
 animation = &"walk_2_idle_L"
 
 [sub_resource type="AnimationNodeAnimation" id="177"]
-animation = &"turn_run_2_idle_L_after"
+animation = &"walk_2_idle_L_after"
 
 [sub_resource type="AnimationNodeAnimation" id="176"]
 animation = &"walk_2_idle_R"
