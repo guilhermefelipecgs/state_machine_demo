@@ -3463,8 +3463,7 @@ __meta__ = {
 texture_filter = 1
 position = Vector2(0, -34)
 frames = ExtResource( "2" )
-animation = &"walk_2_idle_R"
-frame = 3
+animation = &"idle"
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="."]
 visible = false
