@@ -502,4 +502,16 @@ anims/hit_f_r = SubResource( "8" )
 [node name="animation_tree" parent="target_3" index="3"]
 parameters/StateMachine/playback = SubResource( "9" )
 
+[node name="sprite_2d" type="Sprite2D" parent="target_3"]
+
+[node name="color_rect" type="ColorRect" parent="target_3"]
+offset_left = -22.0002
+offset_top = 53.9999
+offset_right = 17.9998
+offset_bottom = 93.9999
+color = Color(0.301961, 0.301961, 0.301961, 1)
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [editable path="target_3"]

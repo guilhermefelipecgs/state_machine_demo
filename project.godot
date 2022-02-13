@@ -169,7 +169,6 @@ name_casing=2
 
 [rendering]
 
+environment/defaults/default_clear_color=Color(0.301961, 0.301961, 0.301961, 1)
 quality/2d/use_pixel_snap=true
-environment/default_clear_color=Color(0.454902, 0.454902, 0.454902, 1)
-environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=true
