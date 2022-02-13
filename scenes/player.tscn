@@ -2238,6 +2238,35 @@ tracks/1/keys = {
 "values": [0, 1, 2]
 }
 
+[sub_resource type="Animation" id="57"]
+resource_name = "walk_2_idle_L_after"
+length = 0.88
+step = 0.04
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animated_sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"walk_2_idle_L", &"walk_2_idle_after"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animated_sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.08, 0.12, 0.16, 0.2, 0.24, 0.28, 0.32, 0.36, 0.4, 0.44, 0.48, 0.52, 0.56, 0.6, 0.64, 0.68, 0.72, 0.76, 0.8, 0.84),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+}
+
 [sub_resource type="Animation" id="56"]
 resource_name = "walk_2_idle_R"
 length = 0.12
@@ -2267,37 +2296,8 @@ tracks/1/keys = {
 "values": [0, 1, 2]
 }
 
-[sub_resource type="Animation" id="57"]
-resource_name = "walk_2_idle_after_L"
-length = 0.88
-step = 0.04
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("animated_sprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.12),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"walk_2_idle_L", &"walk_2_idle_after"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("animated_sprite:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.04, 0.08, 0.12, 0.16, 0.2, 0.24, 0.28, 0.32, 0.36, 0.4, 0.44, 0.48, 0.52, 0.56, 0.6, 0.64, 0.68, 0.72, 0.76, 0.8, 0.84),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [3, 4, 5, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-}
-
 [sub_resource type="Animation" id="58"]
-resource_name = "walk_2_idle_after_R"
+resource_name = "walk_2_idle_R_after"
 length = 0.88
 step = 0.04
 tracks/0/type = "value"
@@ -3053,14 +3053,14 @@ graph_offset = Vector2(129, 3)
 [sub_resource type="AnimationNodeAnimation" id="175"]
 animation = &"walk_2_idle_L"
 
+[sub_resource type="AnimationNodeAnimation" id="177"]
+animation = &"turn_run_2_idle_L_after"
+
 [sub_resource type="AnimationNodeAnimation" id="176"]
 animation = &"walk_2_idle_R"
 
-[sub_resource type="AnimationNodeAnimation" id="177"]
-animation = &"walk_2_idle_after_L"
-
 [sub_resource type="AnimationNodeAnimation" id="178"]
-animation = &"walk_2_idle_after_R"
+animation = &"walk_2_idle_R_after"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="179"]
 switch_mode = 2
@@ -3076,14 +3076,14 @@ states/End/position = Vector2(700, 70)
 states/Start/position = Vector2(700, -25)
 states/walk_2_idle_L/node = SubResource( "175" )
 states/walk_2_idle_L/position = Vector2(890, -25)
+states/walk_2_idle_L_after/node = SubResource( "177" )
+states/walk_2_idle_L_after/position = Vector2(890, 179)
 states/walk_2_idle_R/node = SubResource( "176" )
 states/walk_2_idle_R/position = Vector2(496, -25)
-states/walk_2_idle_after_L/node = SubResource( "177" )
-states/walk_2_idle_after_L/position = Vector2(890, 179)
-states/walk_2_idle_after_R/node = SubResource( "178" )
-states/walk_2_idle_after_R/position = Vector2(496, 179)
-transitions = ["walk_2_idle_R", "walk_2_idle_after_R", SubResource( "179" ), "walk_2_idle_L", "walk_2_idle_after_L", SubResource( "180" )]
-graph_offset = Vector2(381, -64)
+states/walk_2_idle_R_after/node = SubResource( "178" )
+states/walk_2_idle_R_after/position = Vector2(496, 179)
+transitions = ["walk_2_idle_R", "walk_2_idle_R_after", SubResource( "179" ), "walk_2_idle_L", "walk_2_idle_L_after", SubResource( "180" )]
+graph_offset = Vector2(27, -199)
 
 [sub_resource type="AnimationNodeAnimation" id="182"]
 animation = &"walk_step_L"
@@ -3183,7 +3183,7 @@ states/walk_2_idle/node = SubResource( "181" )
 states/walk_2_idle/position = Vector2(694, -325.4)
 states/walk_cyle/node = SubResource( "190" )
 states/walk_cyle/position = Vector2(694, -477)
-transitions = ["idle_2_walk", "walk_cyle/walk_step_L_before", SubResource( "191" ), "walk_2_idle/walk_2_idle_after_R", "End", SubResource( "192" ), "walk_2_idle/walk_2_idle_after_L", "End", SubResource( "193" ), "walk_cyle/walk_step_L_before", "walk_2_idle/walk_2_idle_R", SubResource( "194" ), "walk_cyle/walk_step_R_before", "walk_2_idle/walk_2_idle_L", SubResource( "195" ), "walk_cyle/walk_step_R_before", "turn/turn_walk_L", SubResource( "196" ), "turn/turn_walk_L", "walk_cyle/walk_step_L", SubResource( "197" ), "walk_cyle/walk_step_L_before", "turn/turn_walk_R", SubResource( "198" ), "turn/turn_walk_R", "walk_cyle/walk_step_R", SubResource( "199" ), "walk_2_idle/walk_2_idle_R", "turn/turn_walk_R", SubResource( "AnimationNodeStateMachineTransition_sqonb" ), "walk_2_idle/walk_2_idle_L", "turn/turn_walk_L", SubResource( "AnimationNodeStateMachineTransition_ocmrg" )]
+transitions = ["idle_2_walk", "walk_cyle/walk_step_L_before", SubResource( "191" ), "walk_2_idle/walk_2_idle_R_after", "End", SubResource( "192" ), "walk_2_idle/walk_2_idle_L_after", "End", SubResource( "193" ), "walk_cyle/walk_step_L_before", "walk_2_idle/walk_2_idle_R", SubResource( "194" ), "walk_cyle/walk_step_R_before", "walk_2_idle/walk_2_idle_L", SubResource( "195" ), "walk_cyle/walk_step_R_before", "turn/turn_walk_L", SubResource( "196" ), "turn/turn_walk_L", "walk_cyle/walk_step_L", SubResource( "197" ), "walk_cyle/walk_step_L_before", "turn/turn_walk_R", SubResource( "198" ), "turn/turn_walk_R", "walk_cyle/walk_step_R", SubResource( "199" ), "walk_2_idle/walk_2_idle_R", "turn/turn_walk_R", SubResource( "AnimationNodeStateMachineTransition_sqonb" ), "walk_2_idle/walk_2_idle_L", "turn/turn_walk_L", SubResource( "AnimationNodeStateMachineTransition_ocmrg" )]
 graph_offset = Vector2(197, -530)
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="203"]
@@ -3362,8 +3362,8 @@ states/turn/node = SubResource( "170" )
 states/turn/position = Vector2(645, 100)
 states/walk/node = SubResource( "202" )
 states/walk/position = Vector2(432, 274.667)
-transitions = ["walk", "jump/jump_short/jump_short_before", SubResource( "203" ), "idle", "aim/draw_weapon", SubResource( "204" ), "aim/save_weapon", "idle", SubResource( "205" ), "Start", "idle", SubResource( "206" ), "jump/jump_short", "idle", SubResource( "207" ), "jump/jump_short/jump_short_after", "idle", SubResource( "208" ), "idle", "jump/jump_climb/jump_climb", SubResource( "209" ), "jump/jump_climb/climb_after", "idle", SubResource( "210" ), "jump/jump_climb", "idle", SubResource( "211" ), "idle", "jump/jump", SubResource( "212" ), "jump/jump", "idle", SubResource( "213" ), "idle", "walk/idle_2_walk", SubResource( "214" ), "walk", "idle", SubResource( "215" ), "walk/walk_2_idle/walk_2_idle_after_R", "idle", SubResource( "216" ), "walk/walk_2_idle/walk_2_idle_after_L", "idle", SubResource( "217" ), "walk/turn/turn_walk_L", "idle", SubResource( "218" ), "walk/turn/turn_walk_R", "idle", SubResource( "219" ), "run", "idle", SubResource( "227" ), "turn", "idle", SubResource( "230" ), "jump/jump_long", "crouch/roll", SubResource( "231" ), "crouch/crouch", "aim/draw_weapon_crouch", SubResource( "232" ), "aim/save_weapon_crouch", "crouch/crouch", SubResource( "233" ), "jump/jump_long", "crouch/crouch", SubResource( "234" ), "idle", "crouch/idle_2_crouch", SubResource( "235" ), "crouch/crouch_2_idle", "idle", SubResource( "236" ), "idle", "turn/turn_run/turn_run_R", SubResource( "237" ), "run/run_2_turn/run_2_turn_R", "turn/turn_run/turn_run_R", SubResource( "239" ), "idle", "turn/turn_idle/turn_idle", SubResource( "228" ), "turn/turn_idle/turn_idle_after", "idle", SubResource( "229" ), "turn/turn_run_2_idle/turn_run_2_idle_R_after", "idle", SubResource( "242" ), "run/run_2_turn/run_2_turn_R", "turn/turn_run_2_idle/turn_run_2_idle_R", SubResource( "238" ), "run/run_cycle/idle_2_run", "jump/jump_short/jump_short_before", SubResource( "223" ), "idle", "run/run_cycle/idle_2_run", SubResource( "224" ), "walk", "run/run_cycle/idle_2_run", SubResource( "AnimationNodeStateMachineTransition_2moe3" ), "turn/turn_run/turn_run_R", "run/run_cycle/run_cycle/run_step_R", SubResource( "AnimationNodeStateMachineTransition_7gm3v" ), "turn/turn_run/turn_run_L", "run/run_cycle/run_cycle/run_step_L", SubResource( "AnimationNodeStateMachineTransition_iwffj" ), "run/run_2_idle/run_2_idle_L_after", "idle", SubResource( "AnimationNodeStateMachineTransition_b565y" ), "run/run_2_idle/run_2_idle_R_after", "idle", SubResource( "AnimationNodeStateMachineTransition_dagkd" ), "turn/turn_run_2_idle/turn_run_2_idle_L_after", "idle", SubResource( "AnimationNodeStateMachineTransition_tvcch" ), "run/run_2_turn/run_2_turn_L", "turn/turn_run/turn_run_L", SubResource( "AnimationNodeStateMachineTransition_nphw4" ), "run/run_2_turn/run_2_turn_L", "turn/turn_run_2_idle/turn_run_2_idle_L", SubResource( "AnimationNodeStateMachineTransition_sfpr5" ), "run/run_cycle/run_cycle", "jump/jump_long", SubResource( "AnimationNodeStateMachineTransition_nmhpi" )]
-graph_offset = Vector2(11, -81)
+transitions = ["walk", "jump/jump_short/jump_short_before", SubResource( "203" ), "idle", "aim/draw_weapon", SubResource( "204" ), "aim/save_weapon", "idle", SubResource( "205" ), "Start", "idle", SubResource( "206" ), "jump/jump_short", "idle", SubResource( "207" ), "jump/jump_short/jump_short_after", "idle", SubResource( "208" ), "idle", "jump/jump_climb/jump_climb", SubResource( "209" ), "jump/jump_climb/climb_after", "idle", SubResource( "210" ), "jump/jump_climb", "idle", SubResource( "211" ), "idle", "jump/jump", SubResource( "212" ), "jump/jump", "idle", SubResource( "213" ), "idle", "walk/idle_2_walk", SubResource( "214" ), "walk", "idle", SubResource( "215" ), "walk/walk_2_idle/walk_2_idle_R_after", "idle", SubResource( "216" ), "walk/walk_2_idle/walk_2_idle_L_after", "idle", SubResource( "217" ), "walk/turn/turn_walk_L", "idle", SubResource( "218" ), "walk/turn/turn_walk_R", "idle", SubResource( "219" ), "run", "idle", SubResource( "227" ), "turn", "idle", SubResource( "230" ), "jump/jump_long", "crouch/roll", SubResource( "231" ), "crouch/crouch", "aim/draw_weapon_crouch", SubResource( "232" ), "aim/save_weapon_crouch", "crouch/crouch", SubResource( "233" ), "jump/jump_long", "crouch/crouch", SubResource( "234" ), "idle", "crouch/idle_2_crouch", SubResource( "235" ), "crouch/crouch_2_idle", "idle", SubResource( "236" ), "idle", "turn/turn_run/turn_run_R", SubResource( "237" ), "run/run_2_turn/run_2_turn_R", "turn/turn_run/turn_run_R", SubResource( "239" ), "idle", "turn/turn_idle/turn_idle", SubResource( "228" ), "turn/turn_idle/turn_idle_after", "idle", SubResource( "229" ), "turn/turn_run_2_idle/turn_run_2_idle_R_after", "idle", SubResource( "242" ), "run/run_2_turn/run_2_turn_R", "turn/turn_run_2_idle/turn_run_2_idle_R", SubResource( "238" ), "run/run_cycle/idle_2_run", "jump/jump_short/jump_short_before", SubResource( "223" ), "idle", "run/run_cycle/idle_2_run", SubResource( "224" ), "walk", "run/run_cycle/idle_2_run", SubResource( "AnimationNodeStateMachineTransition_2moe3" ), "turn/turn_run/turn_run_R", "run/run_cycle/run_cycle/run_step_R", SubResource( "AnimationNodeStateMachineTransition_7gm3v" ), "turn/turn_run/turn_run_L", "run/run_cycle/run_cycle/run_step_L", SubResource( "AnimationNodeStateMachineTransition_iwffj" ), "run/run_2_idle/run_2_idle_L_after", "idle", SubResource( "AnimationNodeStateMachineTransition_b565y" ), "run/run_2_idle/run_2_idle_R_after", "idle", SubResource( "AnimationNodeStateMachineTransition_dagkd" ), "turn/turn_run_2_idle/turn_run_2_idle_L_after", "idle", SubResource( "AnimationNodeStateMachineTransition_tvcch" ), "run/run_2_turn/run_2_turn_L", "turn/turn_run/turn_run_L", SubResource( "AnimationNodeStateMachineTransition_nphw4" ), "run/run_2_turn/run_2_turn_L", "turn/turn_run_2_idle/turn_run_2_idle_L", SubResource( "AnimationNodeStateMachineTransition_sfpr5" ), "run/run_cycle/run_cycle", "jump/jump_long", SubResource( "AnimationNodeStateMachineTransition_nmhpi" )]
+graph_offset = Vector2(25, -75)
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="245"]
 advance_condition = &"die"
@@ -3463,7 +3463,8 @@ __meta__ = {
 texture_filter = 1
 position = Vector2(0, -34)
 frames = ExtResource( "2" )
-animation = &"idle"
+animation = &"walk_2_idle_R"
+frame = 3
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="."]
 visible = false
@@ -3531,9 +3532,9 @@ anims/turn_walk_L = SubResource( "52" )
 anims/turn_walk_R = SubResource( "53" )
 anims/turn_walk_after = SubResource( "54" )
 anims/walk_2_idle_L = SubResource( "55" )
+anims/walk_2_idle_L_after = SubResource( "57" )
 anims/walk_2_idle_R = SubResource( "56" )
-anims/walk_2_idle_after_L = SubResource( "57" )
-anims/walk_2_idle_after_R = SubResource( "58" )
+anims/walk_2_idle_R_after = SubResource( "58" )
 anims/walk_crouched = SubResource( "59" )
 anims/walk_step_L = SubResource( "60" )
 anims/walk_step_L_before = SubResource( "61" )
@@ -3606,7 +3607,6 @@ parameters/main/run/conditions/walk_2_run = false
 parameters/main/run/run_2_idle/playback = SubResource( "AnimationNodeStateMachinePlayback_x5ud4" )
 parameters/main/run/run_2_idle/conditions/after = false
 parameters/main/run/run_2_idle/conditions/idle = false
-parameters/main/run/run_2_idle/conditions/jump = false
 parameters/main/run/run_2_idle/conditions/turn = false
 parameters/main/run/run_2_turn/playback = SubResource( "AnimationNodeStateMachinePlayback_g2mt0" )
 parameters/main/run/run_2_turn/conditions/idle = false
