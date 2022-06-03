@@ -13,7 +13,7 @@ var last_sm_from = 'root'
 
 func _ready():
 	if get_parent() is Window: set_process(false)
-	panel.rect_min_size = Vector2(256, 256)
+	panel.minimum_size = Vector2(256, 256)
 	if not game_manager.debug:
 		hide()
 		set_process(false)
@@ -70,7 +70,7 @@ func _process(delta):
 			else:
 				rect2 = rect2.merge(Rect2(state.position, state.get_node('panel_container').get_minimum_size()))
 	
-	panel.rect_size = rect2.size
+	panel.minimum_size = rect2.size
 	for i in panel.get_children():
 		i.position -= rect2.position
 	
@@ -109,8 +109,8 @@ func _draw():
 		
 		if not label: return
 		
-		var from_label_size = panel.get_node(from_name + '/panel_container/margin_container/label').rect_size
-		var to_label_size = panel.get_node(to_name + '/panel_container/margin_container/label').rect_size
+		var from_label_size = panel.get_node(from_name + '/panel_container/margin_container/label').minimum_size
+		var to_label_size = panel.get_node(to_name + '/panel_container/margin_container/label').minimum_size
 		
 		var from_position = sm.get_node_position(from_name)
 		var to_position = sm.get_node_position(to_name)

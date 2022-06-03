@@ -1,9 +1,9 @@
 [remap]
 
 importer="texture"
-type="StreamTexture2D"
+type="CompressedTexture2D"
 uid="uid://c52u87i2bk0ax"
-path="res://.godot/imported/hit_b_03.png-65bf49b435d4ddff1e6fd2f480a6fc4e.stex"
+path="res://.godot/imported/hit_b_03.png-65bf49b435d4ddff1e6fd2f480a6fc4e.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://textures/target/hit_b_03.png"
-dest_files=["res://.godot/imported/hit_b_03.png-65bf49b435d4ddff1e6fd2f480a6fc4e.stex"]
+dest_files=["res://.godot/imported/hit_b_03.png-65bf49b435d4ddff1e6fd2f480a6fc4e.ctex"]
 
 [params]
 
@@ -29,6 +29,6 @@ roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
-process/HDR_as_SRGB=false
+process/hdr_as_srgb=false
 process/size_limit=0
 detect_3d/compress_to=1
