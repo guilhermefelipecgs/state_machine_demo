@@ -70,8 +70,7 @@ func _enter_tree():
 
 
 func _ready():
-#	_init_playbacks()
-	pass
+	_init_playbacks()
 
 
 func _init_playbacks():
@@ -433,9 +432,18 @@ func _update_state_machine():
 
 
 func _set_param(condition, value, use_all_playbacks = false):
-	var param = 'parameters/conditions/' + condition
-	if $animation_tree.get(param) != null:
-		$animation_tree[param] = value
+	if use_all_playbacks:
+		# set all state machines
+		for playback in playbacks:
+			var param = playback + 'conditions/' + condition
+			if $animation_tree.get(param) != null:
+				$animation_tree[param] = value
+	else:
+		# set only current sub state machine
+		var param = _get_current_playback() + 'conditions/' + condition
+		if $animation_tree.get(param) != null:
+			$animation_tree[param] = value
+
 
 
 func _get_current_playback() -> String:

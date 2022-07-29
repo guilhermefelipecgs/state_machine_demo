@@ -13,7 +13,7 @@ var last_sm_from = 'root'
 
 func _ready():
 	if get_parent() is Window: set_process(false)
-	panel.minimum_size = Vector2(256, 256)
+	panel.custom_minimum_size = Vector2(256, 256)
 	if not game_manager.debug:
 		hide()
 		set_process(false)
@@ -56,10 +56,10 @@ func _process(delta):
 				type = 'end'
 			state.get_node(type).show()
 			state.get_node(type).name = 'panel_container'
-			for i in state.get_children():
-				if not i.visible:
-					state.remove_child(i)
-					i.queue_free()
+			for j in state.get_children():
+				if not j.visible:
+					state.remove_child(j)
+					j.queue_free()
 			state.get_node('panel_container/margin_container/label').text = node_name
 			state.position = sm.get_node_position(node_name)
 			state.name = node_name
@@ -70,7 +70,7 @@ func _process(delta):
 			else:
 				rect2 = rect2.merge(Rect2(state.position, state.get_node('panel_container').get_minimum_size()))
 	
-	panel.minimum_size = rect2.size
+	panel.custom_minimum_size = rect2.size
 	for i in panel.get_children():
 		i.position -= rect2.position
 	
@@ -109,8 +109,8 @@ func _draw():
 		
 		if not label: return
 		
-		var from_label_size = panel.get_node(from_name + '/panel_container/margin_container/label').minimum_size
-		var to_label_size = panel.get_node(to_name + '/panel_container/margin_container/label').minimum_size
+		var from_label_size = panel.get_node(from_name + '/panel_container/margin_container/label').custom_minimum_size
+		var to_label_size = panel.get_node(to_name + '/panel_container/margin_container/label').custom_minimum_size
 		
 		var from_position = sm.get_node_position(from_name)
 		var to_position = sm.get_node_position(to_name)
